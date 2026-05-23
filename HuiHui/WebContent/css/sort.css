@@ -1,0 +1,117 @@
+/* ===================== 1. 全局样式重置 ===================== 
+   作用：清除浏览器默认边距，统一盒模型，方便布局计算
+============================================================ */
+* {
+  margin: 0;            /* 清除默认外边距 */
+  padding: 0;           /* 清除默认内边距 */
+  box-sizing: border-box; /* 宽高包含边框，布局更可控 */
+}
+
+body {
+  font-family: "Microsoft YaHei", sans-serif; /* 中文友好字体，适配Windows */
+  background-color: #f8f8f8;                  /* 浅灰色背景，突出内容区域 */
+}
+
+
+/* ===================== 2. 头部导航布局 ===================== 
+   作用：实现标题居左、导航居右的横向布局，保持全局一致性
+============================================================ */
+header {
+  display: flex;                 /* 开启Flex布局，让子元素横向排列 */
+  justify-content: space-between;/* 标题左对齐，导航右对齐 */
+  align-items: center;           /* 垂直居中对齐（标题和导航同高） */
+  padding: 15px 5%;              /* 左右留5%空白，适配不同屏幕宽度 */
+  background-color: white;       /* 白色背景，区分内容区域 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 轻微阴影，增强层次感 */
+}
+
+/* 标题样式：突出品牌名称 */
+header h1 {
+  font-size: 24px;   /* 标题大小适中 */
+  color: #333;       /* 深灰色，提升辨识度 */
+  margin: 0;         /* 清除浏览器默认边距 */
+}
+
+/* 导航链接样式：统一交互效果 */
+nav a {
+  text-decoration: none;         /* 清除下划线，更简洁 */
+  color: #666;                   /* 浅灰色，降低视觉权重 */
+  margin-left: 20px;             /* 链接之间留20px间距 */
+  font-size: 16px;               /* 文字大小适配阅读 */
+  transition: color 0.3s;        /*  hover 时颜色过渡更丝滑 */
+}
+
+/* 导航链接 hover 效果：增强交互反馈 */
+nav a:hover {
+  color: #ff6600;                /* 橙色高亮，引导用户关注 */
+}
+
+
+/* ===================== 3. 分类页：三图横向布局 ===================== 
+   作用：实现三张卡片水平均分、同高对齐，适配桌面和手机端
+============================================================ */
+.category-grid {
+  display: flex;                 /* 强制卡片横向排列 */
+  flex-wrap: nowrap;             /* 禁止换行！确保桌面端三图同行 */
+  gap: 20px;                     /* 卡片之间的间距（替代margin，更简洁） */
+  padding: 30px 5%;              /* 上下留30px空白，左右留5% */
+  max-width: 1200px;             /* 限制最大宽度，避免超宽拉伸 */
+  margin: 0 auto;                /* 水平居中，适配不同屏幕 */
+}
+
+/* 单个卡片：强制均分宽度，保持布局整齐 */
+.category-card {
+  flex: 1;                       /* 每个卡片自动平分剩余空间，实现等宽 */
+  background-color: white;       /* 白色背景，突出卡片内容 */
+  border-radius: 8px;            /* 8px圆角，柔和边缘 */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); /* 浅阴影，增强层次 */
+  text-align: center;            /* 文字水平居中 */
+  padding: 15px;                 /* 内边距，避免内容贴边 */
+  transition: transform 0.3s;    /* 悬浮时的动画过渡（ translateY ） */
+}
+
+/* 卡片悬浮效果：轻微上浮，提升交互感 */
+.category-card:hover {
+  transform: translateY(-5px);   /* 向上移动5px，模拟"浮起"效果 */
+}
+
+/* 卡片图片：统一尺寸，避免变形 */
+.category-card img {
+  width: 100%;                   /* 占满卡片宽度 */
+  height: 300px;                 /* 固定高度（可根据设计调整，如250px） */
+  object-fit: cover;             /* 保持图片比例，裁剪多余部分（必加！） */
+  border-radius: 6px;            /* 图片圆角，与卡片呼应 */
+  margin-bottom: 12px;           /* 与文字保持12px间距 */
+}
+
+/* 卡片标题：突出分类名称 */
+.category-card h3 {
+  font-size: 18px;   /* 标题大小 */
+  color: #333;       /* 深灰色 */
+  margin-bottom: 8px;/* 与描述间距 */
+}
+
+/* 卡片描述：补充分类信息 */
+.category-card p {
+  font-size: 14px;   /* 描述文字更小 */
+  color: #888;       /* 浅灰色，降低权重 */
+  margin-bottom: 15px;/* 与按钮间距 */
+}
+
+/* 按钮样式：复用全局交互逻辑 */
+.btn {
+  display: inline-block;  /* 行内块，可设置宽高和边距 */
+  padding: 8px 16px;      /* 内边距，保证点击区域 */
+  background-color: #ff6600; /* 橙色背景，吸引点击 */
+  color: #fff;            /* 白色文字，对比强烈 */
+  text-decoration: none;  /* 清除下划线 */
+  border-radius: 4px;     /* 4px圆角，柔和按钮 */
+  transition: background-color 0.3s; /* 背景色过渡 */
+}
+
+/* 按钮 hover 效果：加深颜色，增强反馈 */
+.btn:hover {
+  background-color: #e65c00; /* 深色橙色，暗示可点击 */
+}
+
+

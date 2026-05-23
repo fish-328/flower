@@ -1,0 +1,70 @@
+ .valentine-banner {
+            width: 100%;
+            min-height: 20vh; /* 占视口一半高度 */
+            background: url("love.jpg") no-repeat center center / cover; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8); /* 提升文字可读性 */
+        }
+        .valentine-banner h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .valentine-banner p {
+            font-size: 1.5rem;
+        }
+
+        /* 花束列表：卡片布局 + 响应式 */
+        .valentine-flowers {
+            display: flex;
+            flex-wrap: wrap; /* 小屏幕自动换行 */
+            justify-content: center;
+            gap: 1rem; /* 卡片间距 */
+            padding: 2rem 0;
+        }
+        .flower-card {
+            width: 280px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s; /* hover动画 */
+        }
+        .flower-card:hover {
+            transform: translateY(-5px); /* 轻微上浮，增强交互 */
+        }
+        .flower-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* 保持图片比例 */
+        }
+        .flower-info {
+            padding: 1rem;
+        }
+        .flower-info h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.3rem;
+            color: #333;
+        }
+        .flower-info p {
+            color: #ff6b81; /* 复用项目主色，保持风格 */
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+        .flower-info .btn {
+            background: #ff6b81; /* 主色按钮 */
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 16px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .flower-info .btn:hover {
+            background: #ff4757; /* 深色 hover 效果 */
+        }

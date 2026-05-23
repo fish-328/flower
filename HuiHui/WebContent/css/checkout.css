@@ -1,0 +1,227 @@
+
+/* ===================== 1. 全局样式重置 ===================== 
+   作用：清除浏览器默认边距，统一盒模型，方便布局计算
+============================================================ */
+* {
+  margin: 0;            /* 清除默认外边距 */
+  padding: 0;           /* 清除默认内边距 */
+  box-sizing: border-box; /* 宽高包含边框，布局更可控 */
+}
+
+body {
+  font-family: "Microsoft YaHei", sans-serif; /* 中文友好字体，适配Windows */
+  background-color: #f8f8f8;                  /* 浅灰色背景，突出内容区域 */
+}
+
+
+/* ===================== 2. 头部导航布局 ===================== 
+   作用：实现标题居左、导航居右的横向布局，保持全局一致性
+============================================================ */
+header {
+  display: flex;                 /* 开启Flex布局，让子元素横向排列 */
+  justify-content: space-between;/* 标题左对齐，导航右对齐 */
+  align-items: center;           /* 垂直居中对齐（标题和导航同高） */
+  padding: 15px 5%;              /* 左右留5%空白，适配不同屏幕宽度 */
+  background-color: white;       /* 白色背景，区分内容区域 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 轻微阴影，增强层次感 */
+}
+
+/* 标题样式：突出品牌名称 */
+header h1 {
+  font-size: 24px;   /* 标题大小适中 */
+  color: #333;       /* 深灰色，提升辨识度 */
+  margin: 0;         /* 清除浏览器默认边距 */
+}
+
+/* 导航链接样式：统一交互效果 */
+nav a {
+  text-decoration: none;         /* 清除下划线，更简洁 */
+  color: #666;                   /* 浅灰色，降低视觉权重 */
+  margin-left: 20px;             /* 链接之间留20px间距 */
+  font-size: 16px;               /* 文字大小适配阅读 */
+  transition: color 0.3s;        /*  hover 时颜色过渡更丝滑 */
+}
+
+/* 导航链接 hover 效果：增强交互反馈 */
+nav a:hover {
+  color: #ff6600;                /* 橙色高亮，引导用户关注 */
+}
+
+
+/* 主要内容区域 */
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #e63946;
+}
+
+/* 订单商品列表样式 */
+.order-items {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.order-items h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-table th {
+    background-color: #f8f8f8;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #eee;
+}
+
+.order-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.order-table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.order-table tr:last-child td {
+    border-bottom: none;
+}
+
+.order-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 50px 0;
+    color: #777;
+}
+
+/* 订单信息表单样式 */
+.order-info {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.order-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e63946;
+    box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.total-price {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price span:first-child {
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+}
+
+.total-price span:last-child {
+    font-size: 24px;
+    color: #e63946;
+    font-weight: bold;
+}
+
+/* 提交按钮样式 */
+.submit-order {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.submit-order:hover {
+    background-color: #d62c3f;
+}
+

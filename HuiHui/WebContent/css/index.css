@@ -1,0 +1,126 @@
+/* ===================== 1. 全局样式重置 ===================== 
+   作用：清除浏览器默认边距，统一盒模型，方便布局计算
+============================================================ */
+* {
+  margin: 0;            /* 清除默认外边距 */
+  padding: 0;           /* 清除默认内边距 */
+  box-sizing: border-box; /* 宽高包含边框，布局更可控 */
+}
+
+body {
+  font-family: "Microsoft YaHei", sans-serif; /* 中文友好字体，适配Windows */
+  background-color: #f8f8f8;                  /* 浅灰色背景，突出内容区域 */
+}
+
+
+/* ===================== 2. 头部导航布局 ===================== 
+   作用：实现标题居左、导航居右的横向布局，保持全局一致性
+============================================================ */
+header {
+  display: flex;                 /* 开启Flex布局，让子元素横向排列 */
+  justify-content: space-between;/* 标题左对齐，导航右对齐 */
+  align-items: center;           /* 垂直居中对齐（标题和导航同高） */
+  padding: 15px 5%;              /* 左右留5%空白，适配不同屏幕宽度 */
+  background-color: white;       /* 白色背景，区分内容区域 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 轻微阴影，增强层次感 */
+}
+
+/* 标题样式：突出品牌名称 */
+header h1 {
+  font-size: 24px;   /* 标题大小适中 */
+  color: #333;       /* 深灰色，提升辨识度 */
+  margin: 0;         /* 清除浏览器默认边距 */
+}
+
+/* 导航链接样式：统一交互效果 */
+nav a {
+  text-decoration: none;         /* 清除下划线，更简洁 */
+  color: #666;                   /* 浅灰色，降低视觉权重 */
+  margin-left: 20px;             /* 链接之间留20px间距 */
+  font-size: 16px;               /* 文字大小适配阅读 */
+  transition: color 0.3s;        /*  hover 时颜色过渡更丝滑 */
+}
+
+/* 导航链接 hover 效果：增强交互反馈 */
+nav a:hover {
+  color: #ff6600;                /* 橙色高亮，引导用户关注 */
+}
+
+
+
+
+/* ===================== 3. Banner 模块（核心：背景图叠文字 + 高度压缩） ===================== */
+/* 背景图全屏感 + 文字居中高亮 */
+.banner {
+  width: 100%;
+  height: 50vh; /* 占视口一半高度，适配屏幕 */
+  background: url("flower.png") no-repeat center center / cover; /* 铺满+居中 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中 */
+  align-items: center;     /* 水平居中 */
+  text-align: center;      /* 文字内部居中 */
+  color: #fff;             /* 白色文字更突出 */
+}
+.banner-text h2 {
+  font-size: 2.5rem;       /* 标题放大 */
+  margin-bottom: 1rem; 
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8); /* 深色阴影，提升背景上的可读性 */
+}
+.banner-text p {
+  font-size: 1.2rem;       /* 副标题调整 */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6); /* 浅阴影辅助 */
+}
+/* ===================== 4. 功能模块（三列横向 + 极致紧凑） ===================== */
+.feature {
+  display: flex;                 /* 强制卡片横向排列 */
+  justify-content:center;
+  flex-wrap: wrap;             /* 禁止换行！确保桌面端三图同行 */
+  gap: 60px;                     /* 卡片之间的间距（替代margin，更简洁） */
+  padding: 30px 5%;              /* 上下留30px空白，左右留5% */
+            
+  
+}
+
+.feature-item {
+  background: #fff;
+  padding: 20px; /* 压缩内边距 */
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-3px); /* 轻微上浮 */
+}
+
+.feature-item img {
+  width: 50px;
+  margin-bottom: 8px;
+}
+
+.feature-item h3 {
+  font-size: 14px; /* 缩小标题 */
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.feature-item p {
+  font-size: 12px; /* 缩小描述 */
+  color: #666;
+}
+
+
+
+
+
+/* ===================== 5. 页脚（紧凑到底） ===================== */
+footer {
+  text-align: center;
+  padding: 10px 5%; /* 压缩内边距 */
+  background: #f8f8f8;
+  color: #999;
+  font-size: 12px; /* 缩小文字 */
+}
+

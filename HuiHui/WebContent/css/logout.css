@@ -1,0 +1,60 @@
+
+/* 标题样式 */
+.success-card h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* 描述文本 */
+.success-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* 返回按钮 */
+.back-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #e8198b, #3B65BB);
+    color: #fff;
+    padding: 11px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(232,25,139,0.25);
+}
+
+/* 响应式适配 */
+@media (min-width: 576px) {
+    .success-card {
+        margin-top: 100px;
+        padding: 56px 32px;
+    }
+    .success-card h2 {
+        font-size: 26px;
+    }
+    .success-card p {
+        font-size: 16px;
+    }
+}
+
+/* 深色模式适配（可选扩展） */
+@media (prefers-color-scheme: dark) {
+    .success-card {
+        background: rgba(30,30,30,0.9);
+        color: #fff;
+    }
+    .success-card p {
+        color: #ddd;
+    }
+    .petal {
+        background: rgba(255, 182, 193, 0.3);
+    }
+}
